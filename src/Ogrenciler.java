@@ -87,27 +87,73 @@ public class Ogrenciler {
             System.out.println("Yeni öğreni girecekseniz Enter'a basınız.");
             durdurma =scan.nextLine();
         }
+        secenekler();
     }
-    public static void getOgrenciNumarası() {
-        Scanner scan =new Scanner(System.in);
-        String ogrencinumarasi= "";
-        String sonuc= "";
-
-        do {
-            System.out.println("Öğrencinin numarasını giriniz ");
-            System.out.println("Çıkış yapmak için X'e basınız.");
-            ogrencinumarasi = scan.nextLine();
-            sonuc = ogrenciBilgi.get(ogrencinumarasi);
-
-
-            if(!ogrencinumarasi.equals("X")) {
-                System.out.println(sonuc);
-            }
-        }while(!ogrencinumarasi.equals("X"));
-    }
-
-
-
-
+    
+    public static void ogrenciBilgileri() {
+		 Scanner scan =new Scanner(System.in);
+		 String ogrencinumarasi= "";
+		 String sonuc= "";
+		 
+		 do {
+			 System.out.println("Öğrencinin numarasını giriniz ");
+		     System.out.println("Çıkış yapmak için X'e basınız.");
+		     
+		     ogrencinumarasi = scan.nextLine();
+		     sonuc = ogrenciBilgi.remove(ogrencinumarasi);
+		     
+		     
+		     if(!ogrencinumarasi.equals("X")) {
+		    	 System.out.println(sonuc);
+		    	 System.out.println("Silindi");
+		     }
+		 }while(!ogrencinumarasi.equals("X"));
+		 
+		 secenekler();
+	 }
+	 public static void ogrenciSilme() {
+		 Scanner scan = new Scanner(System.in);
+		 String ogrencinumarasi="";
+		 String sonuc=""; 
+		 
+		 do {
+			 System.out.println("Silmek istediğiniz öğrencinin numarasını giriniz.");
+		     System.out.println("Çıkış yapmak için X'e basınız.");
+		 
+		 if (!ogrencinumarasi.equals("X") ) {
+			 System.out.println(sonuc);
+			 System.out.println("Öğrenci silindi");
+		 }
+		 }while(!ogrencinumarasi.equals("X"));
+		 
+		 secenekler();
+	 }
+	 
+	 
+	 public static void secenekler() {
+		 System.out.println("Seçenekler:");
+		 System.out.println("1:Öğrenci ekleme");
+		 System.out.println("2:Öğrenci numarasını gösterme");
+		 System.out.println("3:Öğrenci numarasını silme");
+		 
+		 Scanner scan = new Scanner(System.in);
+		 int secenek = scan.nextInt();
+		 
+		 switch(secenek) {
+		 case 1 : 
+			 OgrenciMapEkleme();
+			 break;
+		 case 2 :
+			 ogrenciBilgileri();
+			 break;
+		 case 3 :
+			 ogrenciSilme();
+			 break;
+		 default:
+			 System.out.println("Geçersiz seşim.1,2 ya da 3'ü seçiniz.Başka");
+		 }
+	 }
+	
+	
 
 }
