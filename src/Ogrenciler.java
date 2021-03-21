@@ -152,8 +152,9 @@ public class Ogrenciler {
 		 default:
 			 System.out.println("Geçersiz seşim.1,2 ya da 3'ü seçiniz.Başka");
 		 }
+		 secenekler();
 	 }
 	
-	
+	 
 
 }
