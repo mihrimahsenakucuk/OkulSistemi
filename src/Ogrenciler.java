@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ogrenciler {
 
     public static int id = 1000;
-    private String ogrenciid;
+    private static String ogrenciid;
     private String isim ;
     private String soyad ;
     private int sınıf ;
@@ -14,7 +14,7 @@ public class Ogrenciler {
     private int bakiye ;
 
     //Benzersiz öğrenci numarası oluşturuyor.
-    public void setogrenciId() {
+    public void ogrenciId() {
         id++;
         this.ogrenciid= sınıf + "" + id ;
     }
