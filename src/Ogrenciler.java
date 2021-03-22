@@ -8,7 +8,7 @@ public class Ogrenciler {
     private static String ogrenciid;
     private String isim ;
     private String soyad ;
-    private int sınıf ;
+    private int sinif ;
     private String dersler = "";
     private static int dersucreti = 600;
     private int bakiye ;
@@ -16,7 +16,7 @@ public class Ogrenciler {
     //Benzersiz öğrenci numarası oluşturuyor.
     public void ogrenciId() {
         id++;
-        this.ogrenciid= sınıf + "" + id ;
+        this.ogrenciid= sinif + "" + id ;
     }
 
 
@@ -24,14 +24,16 @@ public class Ogrenciler {
         Scanner scan = new Scanner(System.in);
         System.out.println("Öğrenci adını giriniz.");
         this.isim= scan.nextLine();
+	    
         System.out.println("Öğrencinin soyadını giriniz.");
         this.soyad= scan.nextLine();
+	    
         System.out.println("Öğrencinin sınıfını giriniz.");
         System.out.println("1.Sınıf");
         System.out.println("2.Sınıf");
         System.out.println("3.Sınıf");
         System.out.println("4.Sınıf");
-        this.sınıf= scan.nextInt();
+        this.sinif= scan.nextInt();
 
         ogrenciId();
 
@@ -41,7 +43,7 @@ public class Ogrenciler {
         do {
             Scanner scan = new Scanner(System.in);
             System.out.println("Kaydolmak istediğiniz dersi giriniz. (Çıkış için Q)");
-            String alinanders= scan.nextLine();
+            String alinanders = scan.nextLine();
 		
             if(!alinanders.equals("Q")) {
                 dersler = dersler + "\n" + alinanders ;
@@ -73,7 +75,7 @@ public class Ogrenciler {
     public String toString() {
         return   "ÖGRENCİ NUMARASI: " + ogrenciid +
                 "\nÖGRENCİ ADI: " + isim + " " + soyad +
-                "\nSINIF: " + sınıf +
+                "\nSINIF: " + sinif +
                 "\nDERSLER: " + dersler +
                 "\nÖDENECEK TUTAR: " + bakiye ;
     }
