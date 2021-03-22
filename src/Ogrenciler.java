@@ -14,7 +14,7 @@ public class Ogrenciler {
     private int bakiye ;
 
     //Benzersiz öğrenci numarası oluşturuyor.
-    public void setogrenciid() {
+    public void setogrenciId() {
         id++;
         this.ogrenciid= sınıf + "" + id ;
     }
@@ -33,7 +33,7 @@ public class Ogrenciler {
         System.out.println("4.Sınıf");
         this.sınıf= scan.nextInt();
 
-        setogrenciid();
+        ogrenciId();
 
     }
 
@@ -42,6 +42,7 @@ public class Ogrenciler {
             Scanner scan = new Scanner(System.in);
             System.out.println("Kaydolmak istediğiniz dersi giriniz. (Çıkış için Q)");
             String alinanders= scan.nextLine();
+		
             if(!alinanders.equals("Q")) {
                 dersler = dersler + "\n" + alinanders ;
                 bakiye = bakiye + dersucreti ;
@@ -60,9 +61,13 @@ public class Ogrenciler {
         Scanner scan = new Scanner(System.in);
         System.out.println("Ne kadar ödemek istiyorsunuz?");
         int odenentutar= scan.nextInt();
+	    
         bakiye = bakiye - odenentutar;
+	    
         System.out.println("Ödemeniz tamamlandı" + odenentutar);
         System.out.println("Kalan borcunuz: " + bakiye);
+	
+	ogrenciId();
     }
 
     public String toString() {
@@ -81,7 +86,7 @@ public class Ogrenciler {
         while(!durdurma.equals("S")) {
             Ogrenciler o = new Ogrenciler();
             o.kayıt();
-
+            o.odeme();
             ogrenciBilgi.put(o.ogrenciid,o.toString());
             System.out.println("Yeni öğrenci girmeyecekseniz S'ye basınız.");
             System.out.println("Yeni öğreni girecekseniz Enter'a basınız.");
@@ -100,17 +105,17 @@ public class Ogrenciler {
 		     System.out.println("Çıkış yapmak için X'e basınız.");
 		     
 		     ogrencinumarasi = scan.nextLine();
-		     sonuc = ogrenciBilgi.remove(ogrencinumarasi);
+		     sonuc = ogrenciBilgi.get(ogrenciid);
 		     
 		     
 		     if(!ogrencinumarasi.equals("X")) {
 		    	 System.out.println(sonuc);
-		    	 System.out.println("Silindi");
-		     }
+		       }
 		 }while(!ogrencinumarasi.equals("X"));
 		 
 		 secenekler();
 	 }
+	
 	 public static void ogrenciSilme() {
 		 Scanner scan = new Scanner(System.in);
 		 String ogrencinumarasi="";
