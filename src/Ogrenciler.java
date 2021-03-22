@@ -23,17 +23,17 @@ public class Ogrenciler {
     public Ogrenciler() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Öğrenci adını giriniz.");
-        this.isim= scan.nextLine();
+        this.isim = scan.nextLine();
 	    
         System.out.println("Öğrencinin soyadını giriniz.");
-        this.soyad= scan.nextLine();
+        this.soyad = scan.nextLine();
 	    
         System.out.println("Öğrencinin sınıfını giriniz.");
         System.out.println("1.Sınıf");
         System.out.println("2.Sınıf");
         System.out.println("3.Sınıf");
         System.out.println("4.Sınıf");
-        this.sinif= scan.nextInt();
+        this.sinif = scan.nextInt();
 
         ogrenciId();
 
@@ -84,7 +84,7 @@ public class Ogrenciler {
 
     public static void OgrenciMapEkleme() {
         Scanner scan = new Scanner(System.in);
-        String durdurma= "";
+        String durdurma = "";
         while(!durdurma.equals("S")) {
             Ogrenciler o = new Ogrenciler();
             o.kayıt();
@@ -94,7 +94,8 @@ public class Ogrenciler {
             System.out.println("Yeni öğreni girecekseniz Enter'a basınız.");
             durdurma =scan.nextLine();
         }
-        secenekler();
+        secenekler(); 
+	    
     }
     
     public static void ogrenciBilgileri() {
@@ -103,7 +104,7 @@ public class Ogrenciler {
 		 String sonuc= "";
 		 
 		 do {
-			 System.out.println("Öğrencinin numarasını giriniz ");
+	             System.out.println("Öğrencinin numarasını giriniz ");
 		     System.out.println("Çıkış yapmak için X'e basınız.");
 		     
 		     ogrencinumarasi = scan.nextLine();
@@ -112,10 +113,11 @@ public class Ogrenciler {
 		     
 		     if(!ogrencinumarasi.equals("X")) {
 		    	 System.out.println(sonuc);
-		       }
-		 }while(!ogrencinumarasi.equals("X"));
+		        }
+		  }while(!ogrencinumarasi.equals("X"));
 		 
 		 secenekler();
+	    
 	 }
 	
 	 public static void ogrenciSilme() {
@@ -131,6 +133,7 @@ public class Ogrenciler {
 			 System.out.println(sonuc);
 			 System.out.println("Öğrenci silindi");
 		 }
+			 
 		 }while(!ogrencinumarasi.equals("X"));
 		 
 		 secenekler();
