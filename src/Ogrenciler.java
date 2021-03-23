@@ -91,7 +91,7 @@ public class Ogrenciler {
             o.odeme();
             ogrenciBilgi.put(o.ogrenciid,o.toString());
             System.out.println("Yeni öğrenci girmeyecekseniz S'ye basınız.");
-            System.out.println("Yeni öğreni girecekseniz Enter'a basınız.");
+            System.out.println("Yeni öğrenci girecekseniz Enter'a basınız.");
             durdurma =scan.nextLine();
         }
         secenekler(); 
@@ -99,8 +99,8 @@ public class Ogrenciler {
     }
     
     public static void ogrenciBilgileri() {
-		 Scanner scan =new Scanner(System.in);
-		 String ogrencinumarasi= "";
+		 Scanner scan = new Scanner(System.in);
+		 String ogrencinumarasi = "";
 		 String sonuc= "";
 		 
 		 do {
