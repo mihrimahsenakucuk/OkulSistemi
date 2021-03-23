@@ -160,7 +160,7 @@ public class Ogrenciler {
 			 ogrenciSilme();
 			 break;
 		 default:
-			 System.out.println("Geçersiz seşim.1,2 ya da 3'ü seçiniz.Başka");
+			 System.out.println("Geçersiz seçim yaptınız. 1, 2 ya da 3'ü seçiniz...");
 		 }
 		 secenekler();
 	 }
